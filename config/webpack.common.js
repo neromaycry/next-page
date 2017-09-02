@@ -11,7 +11,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js', '.css', '.scss']
   },
 
   module: {
@@ -22,7 +22,7 @@ module.exports = {
           {
             loader: 'awesome-typescript-loader',
             options: { configFileName: helpers.root('src', 'tsconfig.json') }
-          } , 'angular2-template-loader'
+          }, 'angular2-template-loader'
         ]
       },
       {
@@ -34,9 +34,19 @@ module.exports = {
         loader: 'file-loader?name=assets/[name].[hash].[ext]'
       },
       {
+        test: /\.(scss|sass)$/,
+        exclude: helpers.root('src', 'app'),
+        loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: ['css-loader', 'postcss-loader', 'sass-loader'] })
+      },
+      {
+        test: /\.(scss|sass)$/,
+        exclude: helpers.root('src', 'style'),
+        loader: 'raw-loader!postcss-loader!sass-loader'
+      },
+      {
         test: /\.css$/,
         exclude: helpers.root('src', 'app'),
-        loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
+        loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader?sourceMap' })
       },
       {
         test: /\.css$/,
