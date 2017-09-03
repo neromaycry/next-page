@@ -1,0 +1,11 @@
+<div class="intro-layout">
+    <nav class="intro-nav">
+        <div class="intro-nav-tabstrip">
+            <div class="intro-tabstrip" *ngFor="let tabstrip of tabstrips" [ngClass]="(currentId == this.tabstrip.id)?'active':''" (click)="onTabSwitch(this.tabstrip.id)">
+                {{tabstrip.title}}
+            </div>
+        </div>
+
+    </nav>
+    <router-outlet></router-outlet>
+</div>
