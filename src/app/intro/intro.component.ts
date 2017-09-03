@@ -15,18 +15,20 @@ export class IntroComponent {
   constructor(private router: Router) {
     this.tabstrips = [
       { id: 0, title: 'Home' },
-      { id: 1, title: 'Contact' }
+      { id: 1, title: 'About' },
+      { id: 2, title: 'Portfolio' },
+      { id: 3, title: 'Contact' }
     ];
     this.currentId = 0;
   }
 
   onTabSwitch(id: number): void {
     this.currentId = id;
-    switch(this.currentId) {
+    switch (this.currentId) {
       case 0:
         this.router.navigate(['/intro']);
         break;
-      case 1: 
+      case 3:
         this.router.navigate(['./intro/contact']);
         break;
     }

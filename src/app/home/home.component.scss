@@ -17,4 +17,21 @@
 .home-brief {
     font-size: 18px;
     color: #7B7B7B;
+    margin-bottom: 128px;
+}
+
+.home-links {
+    clear: both;
+}
+
+.link {
+    float: left;
+    color: #7B7B7B;
+    margin-right: 24px;
+    text-decoration-line: none;
+
+    &:hover {
+        color: #221E1F;
+        cursor: pointer;
+    }
 }
