@@ -1,0 +1,36 @@
+.intro-layout {
+    margin: 16px;
+}
+
+.intro-nav {
+    padding: 0;
+    height: 64px;
+    clear: both;
+}
+
+.intro-nav-tabstrip {
+    width: 50%;
+    height: 64px;
+    float: right;
+    clear: both;
+}
+
+.intro-tabstrip {
+    height: 100%;
+    line-height: 64px;
+    font-size: 16px;
+    color: #787878;
+    text-align: center;
+    float: left;
+    margin-right: 24px;
+
+    &:hover {
+        color: #221E1F;
+        cursor: pointer;
+    }
+}
+
+.active {
+    color: #221E1F;
+}
+
