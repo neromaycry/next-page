@@ -7,6 +7,8 @@ import { routing } from './app.routing';
 
 import { HomeModule } from './home';
 import { ContactModule } from './contact';
+import { PortfolioModule } from './portfolio';
+import { AboutModule } from './about';
 import { IntroModule, IntroRouting } from './intro';
 
 @NgModule({
@@ -14,6 +16,8 @@ import { IntroModule, IntroRouting } from './intro';
     BrowserModule,
     HomeModule,
     ContactModule,
+    PortfolioModule,
+    AboutModule,
     IntroModule,
     IntroRouting,
     routing
